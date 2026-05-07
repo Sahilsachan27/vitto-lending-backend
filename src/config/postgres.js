@@ -6,6 +6,7 @@ const pool = new Pool({
   database: process.env.POSTGRES_DB || 'vitto_lending',
   user: process.env.POSTGRES_USER || 'postgres',
   password: process.env.POSTGRES_PASSWORD || 'password',
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 });
 
 const connectPostgres = async () => {
