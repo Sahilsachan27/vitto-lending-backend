@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 // ── Security & Middleware ──────────────────────
 app.use(helmet());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
+  origin: process.env.FRONTEND_URL || 'https://vitto-lending.netlify.app',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
