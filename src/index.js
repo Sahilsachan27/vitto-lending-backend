@@ -11,6 +11,9 @@ const apiRoutes = require('./routes/api');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Trust the reverse proxy (Render) so rate limiting works correctly
+app.set('trust proxy', 1);
+
 // ── Security & Middleware ──────────────────────
 app.use(helmet());
 app.use(cors({
